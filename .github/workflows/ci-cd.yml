@@ -55,7 +55,7 @@ jobs:
           severity: 'CRITICAL,HIGH'  # Only fail on HIGH and CRITICAL issues (can also add MEDIUM, etc.)
 
       - name: Push image to ecr
-        run:
+        run: |
           docker push ${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_REPO_NAME }}:${{ env.IMAGE_TAG }}
       
       - name: Store image in github env
