@@ -17,10 +17,10 @@ jobs:
       - name: clone repo
         uses: action/checkout@v3
       - name: Aws creds config
-        uses: aws-action/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v4
         with: 
           role-to-assume:  ${{ env.AWS_ROLE}}  # OIDC (Open id Connect) it's more secure
           aws-region: ${{ env.AWS_REGION }} 
       - name:  Login to ecr 
-        uses:  aws-action/amazon-ecr-login@v1
+        uses:  aws-actions/amazon-ecr-login@v1
       
